@@ -14,11 +14,11 @@
         </tr>
         <tr>
       	  <th>follows</th>
-      	  <th><%= link_to @user.followings.count, relationships_followings_path %></th>
+      	  <th><%= link_to @user.followings.count, user_followings_path(@user) %></th>
         </tr>
         <tr>
       	  <th>followers</th>
-      	  <th><%= link_to @user.followers.count, relationships_followers_path %></th>
+      	  <th><%= link_to @user.followers.count, user_followers_path(@user) %></th>
         </tr>
       </table>
       <div class='row'>
