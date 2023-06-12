@@ -23,6 +23,20 @@
           <td class="comments-counter">
             <%= render "comments/counter", book: @book %>
           </td>
+          <td>
+            <div id="post_raty"></div>
+            <script>
+            let elem = document.querySelector('#post_raty');
+            let opt = {  
+              size     : 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+           　　scoreName: 'book[star]',　
+              half: false,
+             };
+            raty(elem,opt);
+            </script>
+          </td>
           <% if @book.user == current_user %>
             <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}" %></td>
             <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}" %></td>
